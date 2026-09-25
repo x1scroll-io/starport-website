@@ -18,7 +18,7 @@ No installation or build step. Run `node preview.cjs`, then open http://127.0.0.
 
 ## Release facts to confirm before publication
 
-The Chrome Web Store listing is not supplied. The CTA downloads the existing 0.1.0.19 release candidate packaged for experienced beta testers. Replace or supplement it with the verified store URL when ready. Mobile is described as planned. Do not claim audited, universally supported, or production-ready status based on this website. The Website privacy notice describes this static site only, not the wallet's legal terms. Final wallet privacy/terms URLs still need to be provided before distributing a public release through this page.
+The Chrome Web Store listing is not supplied. The CTA downloads the existing 0.1.0.20 release candidate packaged for experienced beta testers. Replace or supplement it with the verified store URL when ready. Mobile is described as planned. Do not claim audited, universally supported, or production-ready status based on this website. The Website privacy notice describes this static site only, not the wallet's legal terms. Final wallet privacy/terms URLs still need to be provided before distributing a public release through this page.
 
 ## Files
 
@@ -43,4 +43,4 @@ Before a broad mobile launch, consider creating smaller encodes/CDN variants of 
 
 ## X1 developer beta distribution
 
-Downloads now include STARPORT_BETA_0.1.0.19.zip, START_HERE.txt, and SHA256SUMS.txt. Every extension file matches the existing 0.1.0.19 compiled archive byte for byte. The package adds installation and feedback instructions outside the extension directory; no wallet code changed. Chrome listing is labeled planned, not approved. Feedback mailto drafts include requested bug details and likes/dislikes/additions. No email was sent.
+Downloads now include STARPORT_BETA_0.1.0.20.zip, START_HERE.txt, and SHA256SUMS.txt. Every extension file matches the existing 0.1.0.20 compiled archive byte for byte. The package adds installation and feedback instructions outside the extension directory; no wallet code changed. Chrome listing is labeled planned, not approved. Feedback mailto drafts include requested bug details and likes/dislikes/additions. No email was sent.

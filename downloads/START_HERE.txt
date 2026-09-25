@@ -1,4 +1,4 @@
-STARPORT X1 COMMUNITY DEVELOPER BETA — 0.1.0.19-rc
+STARPORT X1 COMMUNITY DEVELOPER BETA — 0.1.0.20-rc
 
 For developers, vibe coders, validators, and experienced wallet users.
 This is a LIVE wallet, not a simulated wallet. Mainnet actions can spend real funds.
@@ -9,7 +9,7 @@ INSTALL IN DESKTOP CHROME
 1. Extract this ZIP into a permanent folder.
 2. Open chrome://extensions in Chrome.
 3. Enable Developer mode.
-4. Click Load unpacked and select the extension folder inside this package (it contains manifest.json).
+4. Click Load unpacked and select the extracted folder (it contains manifest.json).
 5. Pin Starport from Chrome's Extensions menu and open it.
 6. Create a separate beta wallet and securely record its recovery information. Never send secrets to support.
 Official Chrome guide: https://developer.chrome.com/docs/extensions/get-started/tutorial/hello-world#load-unpacked
@@ -22,7 +22,7 @@ This unpacked beta does not auto-update through the Chrome Web Store. Keep recov
 
 SEND FEEDBACK
 support@starportwallet.xyz
-Subject: Starport beta 0.1.0.19 — Bug / Feedback / Feature request
+Subject: Starport beta 0.1.0.20 — Bug / Feedback / Feature request
 Tell us what worked, what you liked or disliked, confusing screens, bugs, and additions you would find useful.
 For a bug: include Chrome version, operating system, Starport version, network, site, steps to reproduce, expected result, actual result, and any sanitized screenshot/error. Include a public transaction hash only if relevant and you are comfortable sharing its public activity.
 Never include seed phrases, recovery words, private keys, passwords, API keys, or unsanitized logs.
