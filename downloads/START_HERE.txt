@@ -1,0 +1,30 @@
+STARPORT X1 COMMUNITY DEVELOPER BETA — 0.1.0.19-rc
+
+For developers, vibe coders, validators, and experienced wallet users.
+This is a LIVE wallet, not a simulated wallet. Mainnet actions can spend real funds.
+Use a fresh test wallet with small amounts you can afford to lose. Do not import your primary savings wallet for beta testing. Keep recovery information backed up privately.
+Chrome Web Store listing coming soon — planned, not yet published or approved.
+
+INSTALL IN DESKTOP CHROME
+1. Extract this ZIP into a permanent folder.
+2. Open chrome://extensions in Chrome.
+3. Enable Developer mode.
+4. Click Load unpacked and select the extension folder inside this package (it contains manifest.json).
+5. Pin Starport from Chrome's Extensions menu and open it.
+6. Create a separate beta wallet and securely record its recovery information. Never send secrets to support.
+Official Chrome guide: https://developer.chrome.com/docs/extensions/get-started/tutorial/hello-world#load-unpacked
+
+THIS BUILD'S STATUS
+Release candidate; independent audit pending. 641 unit/regression tests passed. Fresh integrated browser suites were blocked by the build environment and are not claimed as passed. See BUILD_CHECKS.txt. Some swap routes require provider configuration; network support does not mean every route is available. Website preview balances are sample data; the installed extension is live.
+
+UPDATES
+This unpacked beta does not auto-update through the Chrome Web Store. Keep recovery information safe before updating. Do not delete extension storage or uninstall to update. Use the replacement files in the same extension directory and Reload on chrome://extensions after finishing pending approvals; consult support before migrating to a future Store build, which can have a different extension identity.
+
+SEND FEEDBACK
+support@starportwallet.xyz
+Subject: Starport beta 0.1.0.19 — Bug / Feedback / Feature request
+Tell us what worked, what you liked or disliked, confusing screens, bugs, and additions you would find useful.
+For a bug: include Chrome version, operating system, Starport version, network, site, steps to reproduce, expected result, actual result, and any sanitized screenshot/error. Include a public transaction hash only if relevant and you are comfortable sharing its public activity.
+Never include seed phrases, recovery words, private keys, passwords, API keys, or unsanitized logs.
+
+Starport LLC

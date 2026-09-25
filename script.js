@@ -1,69 +1,59 @@
-/* Starport — small progressive-enhancement script (no dependencies) */
-(function () {
-  "use strict";
-
-  var reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
-
-  /* 1. Placeholder CTAs — no dead links, no broken navigation */
-  document.querySelectorAll('[data-placeholder]').forEach(function (el) {
-    el.addEventListener("click", function (e) {
-      e.preventDefault();
-      var label = el.dataset.placeholder === "chrome-web-store"
-        ? "Chrome Web Store listing is coming soon. Thanks for your interest!"
-        : "Coming soon!";
-      showToast(label);
-    });
+const tabs = [...document.querySelectorAll('[role="tab"]')];
+function selectTab(name, focus = false) {
+  tabs.forEach(tab => {
+    const selected = tab.id === `tab-${name}`;
+    tab.setAttribute('aria-selected', String(selected));
+    tab.tabIndex = selected ? 0 : -1;
+    document.getElementById(tab.getAttribute('aria-controls')).hidden = !selected;
+    if (selected && focus) tab.focus();
   });
+}
+tabs.forEach((tab, index) => {
+  tab.addEventListener('click', () => selectTab(tab.id.slice(4)));
+  tab.addEventListener('keydown', event => {
+    let next;
+    if (event.key === 'ArrowRight') next = (index + 1) % tabs.length;
+    if (event.key === 'ArrowLeft') next = (index + tabs.length - 1) % tabs.length;
+    if (event.key === 'Home') next = 0;
+    if (event.key === 'End') next = tabs.length - 1;
+    if (next !== undefined) { event.preventDefault(); selectTab(tabs[next].id.slice(4), true); }
+  });
+});
+document.querySelector('[data-tab="swap"]').addEventListener('click', () => selectTab('swap', true));
+document.getElementById('demo-route').addEventListener('click', () => selectTab('activity', true));
+document.getElementById('demo-amount').addEventListener('input', event => {
+  const value = Number(event.target.value);
+  document.getElementById('demo-output').textContent = Number.isFinite(value) && value >= 0 && value <= 1000000 ? (value * 60000).toLocaleString('en-US', {minimumFractionDigits:2, maximumFractionDigits:2}) : '—';
+});
+const dialog = document.getElementById('info-dialog');
+function showInfo(title, copy) {
+  document.getElementById('dialog-title').textContent = title;
+  document.getElementById('dialog-copy').textContent = copy;
+  dialog.showModal();
+}
+document.querySelectorAll('[data-demo]').forEach(button => button.addEventListener('click', () => {
+  const send = button.dataset.demo === 'send';
+  showInfo(send ? 'Your next move, made clear.' : 'The right address, in reach.', send ? 'In the wallet, Send lets you choose an asset, network, amount, and recipient before reviewing the transaction. This website is a sample preview and cannot move funds.' : 'In the wallet, Receive shows the public address for your chosen network. This preview does not generate an address. Always confirm that the sending and receiving networks match.');
+}));
+document.getElementById('site-privacy').addEventListener('click', () => showInfo('About this website', 'This website preview uses no analytics, advertising trackers, signup database, or wallet connection. The interactive wallet uses sample data. When deployed, the hosting provider may process request information such as IP addresses and access logs. Email links open your email application; any message you send is handled by Starport LLC at support@starportwallet.xyz. This notice describes this website, not the wallet’s privacy policy or terms.'));
+const frame = document.getElementById('gyro');
+const motion = document.getElementById('motion');
+const reduced = matchMedia('(prefers-reduced-motion: reduce)');
+let paused = reduced.matches || Boolean(navigator.connection?.saveData);
+let inView = true;
+function syncMotion() {
+  motion.setAttribute('aria-pressed', String(paused));
+  motion.textContent = paused ? 'Play motion ▷' : 'Pause motion Ⅱ';
+  frame.contentWindow?.postMessage({type:'starport-motion', paused:paused || !inView || document.hidden}, location.protocol === 'file:' ? '*' : location.origin);
+  document.dispatchEvent(new CustomEvent('starport-motion', {detail:{paused:paused || document.hidden}}));
+}
+motion.addEventListener('click', () => {paused = !paused; syncMotion();});
+document.addEventListener('starport-autoplay-blocked', () => {paused = true; syncMotion();});
+reduced.addEventListener('change', () => {paused = reduced.matches; syncMotion();});
+frame.addEventListener('load', syncMotion);
+document.addEventListener('visibilitychange', syncMotion);
+new IntersectionObserver(entries => {inView = entries[0].isIntersecting; syncMotion();}, {rootMargin:'100px'}).observe(frame);
+syncMotion();
 
-  /* 2. Tiny toast */
-  var toastEl = null;
-  var toastTimer = null;
-  function showToast(text) {
-    if (!toastEl) {
-      toastEl = document.createElement("div");
-      toastEl.setAttribute("role", "status");
-      toastEl.style.cssText = [
-        "position:fixed", "left:50%", "bottom:28px", "transform:translateX(-50%) translateY(12px)",
-        "max-width:min(92vw,420px)", "padding:.8rem 1.15rem", "border-radius:12px",
-        "background:linear-gradient(160deg,#121A38,#0C1228)", "color:#EAF0FF",
-        "border:1px solid rgba(140,158,255,.34)", "font:500 .9rem/1.45 Inter,system-ui,sans-serif",
-        "box-shadow:0 18px 50px -20px rgba(0,0,0,.9),0 0 34px -14px rgba(61,90,254,.6)",
-        "z-index:99", "opacity:0", "transition:opacity .25s ease,transform .25s ease",
-        "text-align:center", "pointer-events:none"
-      ].join(";");
-      document.body.appendChild(toastEl);
-    }
-    toastEl.textContent = text;
-    requestAnimationFrame(function () {
-      toastEl.style.opacity = "1";
-      toastEl.style.transform = "translateX(-50%) translateY(0)";
-    });
-    clearTimeout(toastTimer);
-    toastTimer = setTimeout(function () {
-      toastEl.style.opacity = "0";
-      toastEl.style.transform = "translateX(-50%) translateY(12px)";
-    }, 2800);
-  }
-
-  /* 3. Subtle portal parallax (disabled for reduced motion / touch) */
-  var portal = document.querySelector(".hero__portal");
-  var isTouch = window.matchMedia("(hover: none)").matches;
-  if (portal && !reduceMotion && !isTouch) {
-    var raf = null, tx = 0, ty = 0, cx = 0, cy = 0;
-    window.addEventListener("mousemove", function (e) {
-      tx = (e.clientX / window.innerWidth - 0.5) * 26;
-      ty = (e.clientY / window.innerHeight - 0.5) * 26;
-      if (!raf) raf = requestAnimationFrame(tick);
-    }, { passive: true });
-
-    function tick() {
-      raf = null;
-      cx += (tx - cx) * 0.08;
-      cy += (ty - cy) * 0.08;
-      portal.style.translate = "calc(-50% + " + cx.toFixed(2) + "px) calc(-50% + " + cy.toFixed(2) + "px)";
-      if (Math.abs(tx - cx) > 0.05 || Math.abs(ty - cy) > 0.05) {
-        raf = requestAnimationFrame(tick);
-      }
-    }
-  }
-})();
+function revealInstall(){if(location.hash==='#beta-install')document.getElementById('beta-install').open=true;}
+window.addEventListener('hashchange',revealInstall);revealInstall();
