@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Starport — Your multichain gateway</title>
+  <meta name="description" content="Starport is a self-custody multichain wallet. One wallet, every chain — multi-hop swaps across EVM, Solana/X1 (SVM), Move (Sui/Aptos) and THORChain rails." />
+  <meta name="theme-color" content="#050A18" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Starport — Your multichain gateway" />
+  <meta property="og:description" content="One wallet, every chain. Self-custody, multi-hop swaps, custom RPC." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://starportwallet.com" />
+  <link rel="canonical" href="https://starportwallet.com/" />
+
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Cdefs%3E%3ClinearGradient id='g' x1='0' y1='0' x2='1' y2='1'%3E%3Cstop offset='0' stop-color='%238C9EFF'/%3E%3Cstop offset='1' stop-color='%233D5AFE'/%3E%3C/linearGradient%3E%3C/defs%3E%3Ccircle cx='16' cy='16' r='11' fill='none' stroke='url(%23g)' stroke-width='3'/%3E%3Ccircle cx='16' cy='16' r='4' fill='url(%23g)'/%3E%3C/svg%3E" />
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="bg-glow" aria-hidden="true"></div>
+
+  <!-- ───────────────────────── NAV ───────────────────────── -->
+  <header class="nav" id="top">
+    <div class="container nav__inner">
+      <a class="brand" href="#top" aria-label="Starport home">
+        <span class="brand__mark" aria-hidden="true">
+          <svg viewBox="0 0 40 40" role="img">
+            <defs>
+              <linearGradient id="ringGrad" x1="0" y1="0" x2="1" y2="1">
+                <stop offset="0" stop-color="#8C9EFF" />
+                <stop offset="1" stop-color="#3D5AFE" />
+              </linearGradient>
+            </defs>
+            <circle class="ring" cx="20" cy="20" r="14" />
+            <circle cx="20" cy="20" r="5" fill="url(#ringGrad)" />
+          </svg>
+        </span>
+        <span class="brand__name">Starport</span>
+      </a>
+
+      <nav class="nav__links" aria-label="Primary">
+        <a href="#features">Features</a>
+        <a href="#chains">Chains</a>
+        <a href="#roadmap">Roadmap</a>
+      </nav>
+
+      <a class="btn btn--ghost nav__cta" href="#download">Download</a>
+    </div>
+  </header>
+
+  <main>
+    <!-- ───────────────────────── HERO ───────────────────────── -->
+    <section class="hero">
+      <div class="hero__portal" aria-hidden="true">
+        <span class="portal__ring portal__ring--1"></span>
+        <span class="portal__ring portal__ring--2"></span>
+        <span class="portal__ring portal__ring--3"></span>
+        <span class="portal__core"></span>
+      </div>
+
+      <div class="container hero__inner">
+        <p class="eyebrow reveal">
+          <span class="dot" aria-hidden="true"></span>
+          Self-custody · Multichain · Open rails
+        </p>
+
+        <h1 class="hero__title reveal">Starport</h1>
+
+        <p class="hero__tagline reveal">
+          Your multichain gateway.<br />
+          <span class="grad">One wallet, every chain.</span>
+        </p>
+
+        <p class="hero__sub reveal">
+          Hold your own keys, always. Starport routes a single swap across
+          multiple chains in one tap — no bridges to babysit, no custodians in
+          the middle. Your 25-word passphrase never leaves your device.
+        </p>
+
+        <div class="hero__cta reveal" id="download">
+          <a class="btn btn--primary" href="#" data-placeholder="chrome-web-store">
+            <svg class="btn__icon" viewBox="0 0 24 24" aria-hidden="true">
+              <circle cx="12" cy="12" r="10" fill="none" stroke="currentColor" stroke-width="1.6"/>
+              <circle cx="12" cy="12" r="3.6" fill="currentColor"/>
+            </svg>
+            Download for Chrome
+          </a>
+          <span class="btn btn--secondary" aria-disabled="true">
+            iOS &amp; Android coming soon
+          </span>
+        </div>
+
+        <p class="hero__meta reveal">
+          Chrome extension live · Now in open beta · Free to use
+        </p>
+      </div>
+    </section>
+
+    <!-- ───────────────────────── FEATURES ───────────────────────── -->
+    <section class="section" id="features">
+      <div class="container">
+        <div class="section__head">
+          <h2 class="section__title">Built for the whole galaxy</h2>
+          <p class="section__lead">
+            A wallet that treats every chain as a first-class destination —
+            and gets you there in one move.
+          </p>
+        </div>
+
+        <div class="cards">
+          <article class="card">
+            <div class="card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M4 16l5-5 3 3 4-6 4 4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/><path d="M4 20h16" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg>
+            </div>
+            <h3 class="card__title">Multi-hop swaps</h3>
+            <p class="card__text">
+              Route one swap across chains in a single tap. Starport finds the
+              path, you confirm once.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="4" fill="none" stroke="currentColor" stroke-width="1.8"/><ellipse cx="12" cy="12" rx="10" ry="4.2" fill="none" stroke="currentColor" stroke-width="1.6"/><ellipse cx="12" cy="12" rx="10" ry="4.2" transform="rotate(60 12 12)" fill="none" stroke="currentColor" stroke-width="1.6" opacity=".7"/><ellipse cx="12" cy="12" rx="10" ry="4.2" transform="rotate(120 12 12)" fill="none" stroke="currentColor" stroke-width="1.6" opacity=".5"/></svg>
+            </div>
+            <h3 class="card__title">Every chain</h3>
+            <p class="card__text">
+              EVM, Solana / X1 (SVM), and Move (Sui / Aptos) — plus THORChain
+              rails to Bitcoin, Litecoin, Cardano, Dogecoin and Tron.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><rect x="4" y="4" width="16" height="16" rx="4" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M9 9h6v6H9z" fill="none" stroke="currentColor" stroke-width="1.6"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/></svg>
+            </div>
+            <h3 class="card__title">Custom RPC</h3>
+            <p class="card__text">
+              Bring your own endpoints and full control. Point Starport at any
+              node you trust — or run your own.
+            </p>
+          </article>
+
+          <article class="card">
+            <div class="card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24"><path d="M12 3l7 3v5c0 4.5-3 8.2-7 10-4-1.8-7-5.5-7-10V6z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 12l2.2 2.2L15.5 10" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            </div>
+            <h3 class="card__title">Security</h3>
+            <p class="card__text">
+              Self-custody, a 25-word passphrase, and keys that never leave
+              your device. No servers holding your secrets.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ───────────────────────── CHAINS ───────────────────────── -->
+    <section class="section section--chains" id="chains">
+      <div class="container">
+        <div class="section__head section__head--tight">
+          <h2 class="section__title">Chain coverage</h2>
+          <p class="section__lead">Ten networks today — more docking soon.</p>
+        </div>
+        <ul class="chips" aria-label="Supported chains">
+          <li class="chip"><span class="chip__glyph">◈</span>EVM</li>
+          <li class="chip"><span class="chip__glyph">◎</span>Solana</li>
+          <li class="chip"><span class="chip__glyph">✷</span>X1</li>
+          <li class="chip"><span class="chip__glyph">◆</span>Sui</li>
+          <li class="chip"><span class="chip__glyph">⬡</span>Aptos</li>
+          <li class="chip"><span class="chip__glyph">₿</span>Bitcoin</li>
+          <li class="chip"><span class="chip__glyph">Ł</span>Litecoin</li>
+          <li class="chip"><span class="chip__glyph">₳</span>Cardano</li>
+          <li class="chip"><span class="chip__glyph">Ð</span>Dogecoin</li>
+          <li class="chip"><span class="chip__glyph">◐</span>Tron</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- ───────────────────────── ROADMAP ───────────────────────── -->
+    <section class="section section--roadmap" id="roadmap">
+      <div class="container roadmap">
+        <div class="roadmap__item roadmap__item--done">
+          <span class="roadmap__status">Live</span>
+          <span class="roadmap__label">Chrome extension</span>
+        </div>
+        <div class="roadmap__track" aria-hidden="true"></div>
+        <div class="roadmap__item roadmap__item--progress">
+          <span class="roadmap__status">In progress</span>
+          <span class="roadmap__label">iOS &amp; Android</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ───────────────────────── FOOTER ───────────────────────── -->
+  <footer class="footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <span class="brand__mark brand__mark--sm" aria-hidden="true">
+          <svg viewBox="0 0 40 40"><circle class="ring" cx="20" cy="20" r="14"/><circle cx="20" cy="20" r="5" class="core"/></svg>
+        </span>
+        <span>Starport</span>
+      </div>
+
+      <nav class="footer__links" aria-label="Footer">
+        <a href="#">Privacy</a>
+        <a href="#">Terms</a>
+        <a href="mailto:support@starportwallet.xyz">support@starportwallet.xyz</a>
+      </nav>
+
+      <p class="footer__copy">© 2026 Starport LLC</p>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
