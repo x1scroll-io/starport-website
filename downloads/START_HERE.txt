@@ -1,4 +1,4 @@
-STARPORT X1 COMMUNITY DEVELOPER BETA — 0.1.0.25-rc
+STARPORT X1 COMMUNITY DEVELOPER BETA — 0.1.0.26-rc
 
 For developers, vibe coders, validators, and experienced wallet users.
 This is a LIVE wallet, not a simulated wallet. Mainnet actions can spend real funds.
@@ -22,7 +22,7 @@ This unpacked beta does not auto-update through the Chrome Web Store. Keep recov
 
 SEND FEEDBACK
 support@starportwallet.xyz
-Subject: Starport beta 0.1.0.25 — Bug / Feedback / Feature request
+Subject: Starport beta 0.1.0.26 — Bug / Feedback / Feature request
 Tell us what worked, what you liked or disliked, confusing screens, bugs, and additions you would find useful.
 For a bug: include Chrome version, operating system, Starport version, network, site, steps to reproduce, expected result, actual result, and any sanitized screenshot/error. Include a public transaction hash only if relevant and you are comfortable sharing its public activity.
 Never include seed phrases, recovery words, private keys, passwords, API keys, or unsanitized logs.
