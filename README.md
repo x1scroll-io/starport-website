@@ -12,7 +12,7 @@ No installation or build step. Run `node preview.cjs`, then open http://127.0.0.
 - Product-led responsive layout with interactive Assets / Swap / Activity concepts. All balances, quotes, and progress are explicitly sample data. No wallet connection or signing code.
 - Real navigation, working email contact, keyboard-operable tabs, dialogs and FAQ disclosures.
 - Removed placeholder Chrome Store download and legal links, unsupported universal-chain claims, and unverified 25-word recovery assertion.
-- Beta contact uses support@starportwallet.xyz; no form, backend, analytics, external fonts, or tracking scripts.
+- Beta contact uses starportwallet@gmail.com; no form, backend, analytics, external fonts, or tracking scripts.
 - Removed the old `.app` to `.com` redirect because the owner's stated product domain is `.app`. No new domain redirects are assumed; configure aliases in Vercel after confirming DNS. `.xyz` remains the business/support domain.
 - Removed one-year immutable caching for unversioned CSS/JS to avoid stale files after updates.
 

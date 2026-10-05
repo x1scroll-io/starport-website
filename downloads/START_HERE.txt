@@ -21,7 +21,7 @@ UPDATES
 This unpacked beta does not auto-update through the Chrome Web Store. Keep recovery information safe before updating. Do not delete extension storage or uninstall to update. Use the replacement files in the same extension directory and Reload on chrome://extensions after finishing pending approvals; consult support before migrating to a future Store build, which can have a different extension identity.
 
 SEND FEEDBACK
-support@starportwallet.xyz
+starportwallet@gmail.com
 Subject: Starport beta 0.1.0.26 — Bug / Feedback / Feature request
 Tell us what worked, what you liked or disliked, confusing screens, bugs, and additions you would find useful.
 For a bug: include Chrome version, operating system, Starport version, network, site, steps to reproduce, expected result, actual result, and any sanitized screenshot/error. Include a public transaction hash only if relevant and you are comfortable sharing its public activity.
